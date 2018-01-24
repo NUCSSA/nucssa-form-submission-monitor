@@ -13,7 +13,6 @@ const store = new FormsDataModel();
 render(
     <Provider store={store}>
         <div className={"container"}>
-            <DevTools />
             <HashRouter>
                 <App store={store} />
             </HashRouter>
