@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom';
 import { observer, inject } from "mobx-react";
 import { ListGroupItem, ListGroup } from "react-bootstrap";
+import FormDataGrid from './FormDataGrid';
 import queryString from "query-string";
 import _ from 'lodash';
+
 
 @inject('store')
 @withRouter
@@ -81,11 +83,14 @@ class FormData extends React.Component {
                 </div>
             );
         }
+
         return (
             <div>
                 <h1>{formData.title}</h1>
                 <h2>报名人数: {formData.data.length}</h2>
-                {FormData.renderFormData(formData.data)}
+                <FormDataGrid
+                    data={formData.data}
+                />
             </div>
         )
     }
