@@ -9,13 +9,20 @@ class FormDataGrid extends React.Component {
 
     render() {
         return(
-            <BootstrapTable data={this.props.data} striped hover pagination>
-                {this.formKeys.map((k) => {
-                    if(k === 'unique_id') {
+            <BootstrapTable data={this.props.data} search striped hover pagination exportCSV>
+                {this.formKeys
+                    .filter((k) => {
+                        return k !== 'user'
+                            && k !== 'user_ip'
+                            && k !== 'post_id'
+                            && k !== 'parent_post_id'
+                            && k !== 'unique_id';
+                    })
+                    .map((k) => {
+                    if(k === 'timestamp') {
                         return <TableHeaderColumn
                             isKey
                             dataSort
-                            filter={ { type: 'TextFilter' } }
                             key={k} dataField={k}>
                             {k}
                         </TableHeaderColumn>
@@ -23,7 +30,6 @@ class FormDataGrid extends React.Component {
                         return <TableHeaderColumn
                             key={k}
                             dataSort
-                            filter={ { type: 'TextFilter' } }
                             dataField={k}>
                             {k}
                             </TableHeaderColumn>
