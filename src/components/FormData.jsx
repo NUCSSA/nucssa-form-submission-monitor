@@ -29,7 +29,6 @@ class FormData extends React.Component {
                 <ListGroup>
                     {rowHtml}
                 </ListGroup>
-
             </div>
         )
     }

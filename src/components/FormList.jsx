@@ -15,7 +15,8 @@ class FormList extends React.Component {
 
         return (
             <ListGroup>
-                {formsData.map((formData, idx) => {
+                {formsData
+                    .map((formData, idx) => {
                     return (
                         <ListGroupItem key={idx} onClick={() => {
                             this.props.history.push(`/form?id=${formData.id}`);

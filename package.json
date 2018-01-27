@@ -39,6 +39,7 @@
   "dependencies": {
     "axios": "^0.17.1",
     "lodash": "^4.17.4",
+    "mobile-detect": "^1.4.1",
     "mobx": "^3.0.0",
     "mobx-react": "^4.1.0",
     "mobx-react-devtools": "^4.2.11",
@@ -47,6 +48,7 @@
     "react-bootstrap": "^0.32.0",
     "react-bootstrap-table": "^4.3.1",
     "react-dom": "^15.1.0",
+    "react-media": "^1.6.1",
     "react-router-dom": "^4.2.2"
   }
 }
