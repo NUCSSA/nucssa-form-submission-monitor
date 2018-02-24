@@ -57,11 +57,14 @@ class FormDataGrid extends React.Component {
                             return <TableHeaderColumn
                                 isKey
                                 dataSort
-                                key={k} dataField={k}>
+                                key={k} dataField={k}
+                                hidden
+                            >
                                 {k}
                             </TableHeaderColumn>
                         } else {
                             return <TableHeaderColumn
+                                columnTitle
                                 key={k}
                                 dataSort
                                 dataField={k}>
@@ -82,15 +85,15 @@ class FormDataGrid extends React.Component {
                         matches ? this.renderSmallBootstrapTable() : this.renderBootstrapTable()
                     }
                 </Media>
-                <Media query="(max-width: 599px)">
-                    {matches =>
-                        matches ? (
-                            <p>The document is less than 600px wide.</p>
-                        ) : (
-                            <p>The document is at least 600px wide.</p>
-                        )
-                    }
-                </Media>
+                {/*<Media query="(max-width: 599px)">*/}
+                    {/*{matches =>*/}
+                        {/*matches ? (*/}
+                            {/*<p>The document is less than 600px wide.</p>*/}
+                        {/*) : (*/}
+                            {/*<p>The document is at least 600px wide.</p>*/}
+                        {/*)*/}
+                    {/*}*/}
+                {/*</Media>*/}
             </div>
 
         );
