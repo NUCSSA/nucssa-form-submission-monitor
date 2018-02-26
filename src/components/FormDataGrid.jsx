@@ -11,7 +11,6 @@ class FormDataGrid extends React.Component {
     }
 
     renderSmallBootstrapTable() {
-        console.log('here');
          return (
                 <BootstrapTable data={this.props.data} search striped hover pagination>
                     {this.formKeys

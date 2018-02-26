@@ -10,6 +10,11 @@ export default class FormsDataModel {
     @observable formsData = [];
     @observable formsDataMap = {};
     @observable isLoadingFormsData = false;
+    @observable isLoggedIn = false;
+
+    @action checkPassword(password) {
+        this.isLoggedIn = password === 'Naive';
+    }
 
     @action loadFormsData() {
         this.isLoadingFormsData = true;
