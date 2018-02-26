@@ -13,6 +13,7 @@ class LoginPage extends React.Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleSignIn = this.handleSignIn.bind(this);
+        this.handleKeyPress = this.handleKeyPress.bind(this);
         this.renderErrorMessage = this.renderErrorMessage.bind(this);
     }
 
@@ -35,8 +36,13 @@ class LoginPage extends React.Component {
         });
     }
 
+    handleKeyPress(e) {
+        if (e.key === 'Enter') {
+            this.handleSignIn(e);
+        }
+    }
+
     renderErrorMessage() {
-        console.log("hello");
         if (this.state.incorrectPassword) {
             return (
                 <Alert bsStyle="danger">
@@ -57,10 +63,13 @@ class LoginPage extends React.Component {
                             type="password"
                             value={this.state.password}
                             onChange={this.handleChange}
+                            onKeyPress={this.handleKeyPress}
                         />
 
                 </form>
-                <Button bsStyle="primary" onClick={this.handleSignIn}>Sign In</Button>
+                <Button bsStyle="primary" onClick={this.handleSignIn} bsSize="large" block>
+                    Sign In
+                </Button>
 
 
             </div>);
