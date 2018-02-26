@@ -1,6 +1,7 @@
-var path = require('path');
-var webpack = require('webpack');
-var UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
+const webpack = require('webpack');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: [
@@ -8,7 +9,7 @@ module.exports = {
     ],
     output: {
         path: path.join(__dirname, 'dist'),
-        filename: 'bundle.js',
+        filename: 'bundle.[hash].js',
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
@@ -17,6 +18,9 @@ module.exports = {
         }),
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
+        }),
+        new HtmlWebpackPlugin({
+            template: './index.html'
         })
     ],
     resolve: {
