@@ -87,9 +87,14 @@ class FormData extends React.Component {
             <div>
                 <h1>{formData.title}</h1>
                 <h2>报名人数: {formData.data.length}</h2>
+              {
+                formData.data.length !== 0
+                &&
                 <FormDataGrid
-                    data={formData.data}
+                  data={formData.data}
                 />
+              }
+
             </div>
         )
     }
